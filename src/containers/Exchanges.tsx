@@ -11,7 +11,6 @@ import Finance from './Finance';
 
 const Exchanges = () => {
   const exchangesData = useExchanges();
-  console.log(exchangesData);
   return (
     <>
       <h1>Exchanges</h1>

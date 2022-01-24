@@ -6,9 +6,8 @@ interface nftMap {
 }
 
 const CardNfts = (data: any) => {
-  // console.log(data)
   const nfts = data.data.bundles;
-  console.log(nfts);
+ 
   return (
     <>
       <div className="flex min-h-screen flex-col justify-center items-center">

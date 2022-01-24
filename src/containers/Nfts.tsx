@@ -4,7 +4,6 @@ import useNfts from '../hooks/useNfts';
 
 const Nfts = () => {
   const data = useNfts();
-  console.log(data);
   return (
     <div className='flex flex-col justify-center items-center'>
       <h1>Nfts</h1>

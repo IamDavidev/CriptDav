@@ -10,7 +10,7 @@ interface exchangeMap {
 
 const CardExchanges = (data: any) => {
   const exchanges = data.data;
-  console.log(exchanges);
+
   return (
     <div className="min-h-screen flex flex-col justify-center align-center ">
       <div className="grid grid-cols-4">

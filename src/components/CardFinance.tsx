@@ -8,7 +8,7 @@ interface financeMap {
 
 const CardFinance = (data: any) => {
   const finance = data.data;
-  console.log(finance);
+  
   return (
     <div>
       <div className="grid grid-cols-4">
