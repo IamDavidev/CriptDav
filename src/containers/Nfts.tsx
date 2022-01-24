@@ -6,7 +6,7 @@ const Nfts = () => {
   const data = useNfts();
   console.log(data);
   return (
-    <div>
+    <div className='flex flex-col justify-center items-center'>
       <h1>Nfts</h1>
       {data ? <CardNfts data={data} /> : <p>loading ...</p>}
     </div>

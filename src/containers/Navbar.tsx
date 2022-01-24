@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <nav>
-      <div className="">
-        <Link className="px-3 text-emerald-400 text-2xl uppercase" to="/coins">
+      <div className="m-5 ">
+        <Link className="px-3  text-emerald-400 text-2xl uppercase" to="/coins">
           coins
         </Link>
         <Link

@@ -1,6 +1,8 @@
 interface nftMap {
   name: string;
   assets: [];
+  permalink: string;
+  slug: string
 }
 
 const CardNfts = (data: any) => {
@@ -9,12 +11,11 @@ const CardNfts = (data: any) => {
   console.log(nfts);
   return (
     <>
-      <h1>ntfsrender</h1>
       <div className="flex min-h-screen flex-col justify-center items-center">
         {nfts &&
           nfts.map((nft: nftMap) => {
             return (
-              <>
+              <a href={nft.permalink} key={nft.slug} className="flex flex-col justify-center items-center" target='_blank'>
                 <h2 className="my-4 text-blue-400">{nft.name}</h2>
                 <div className="grid grid-cols-2 place-items-center">
                   {nft.assets &&
@@ -30,7 +31,7 @@ const CardNfts = (data: any) => {
                       );
                     })}
                 </div>
-              </>
+              </a>
             );
           })}
       </div>

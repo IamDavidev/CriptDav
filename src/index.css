@@ -5,3 +5,10 @@
 p{
     color: #0ff;
 }
+h1{
+    color: rgb(0, 81, 255);
+    letter-spacing: .5rem;
+    font-size: 2.4rem;
+    border-bottom: 1px solid #0ff;
+    text-transform: uppercase;
+}

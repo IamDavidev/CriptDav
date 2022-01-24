@@ -7,12 +7,12 @@ const CoinFilter = () => {
   const { title } = useParams();
 
   const coinInfo= useCoinFilter({ title: title || 'bitcoin' });
-  console.log(coinInfo);
   return (
     <>
-      <h1>{title}</h1>
+      <h1 className='text-blue-500 text-3xl uppercase tracking-widest'>{title}</h1>
       {coinInfo ? <InfoCoin data={coinInfo} /> : <p>loading...</p>}
     </>
   );
 };
 export default CoinFilter;
+
