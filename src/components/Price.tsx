@@ -2,11 +2,11 @@ import React from 'react';
 
 const Price = ({ data }: { data: Number }) => {
   if (data < 0) {
-  
     return (
       <span className="text-red-500 flex flex-row">
-        <p className="rotate-180">^</p>
-       {data}
+        <strong>
+        {data}
+        </strong>
       </span>
     );
   }
