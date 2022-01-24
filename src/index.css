@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+p{
+    color: #0ff;
+}

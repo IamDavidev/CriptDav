@@ -1,21 +1,12 @@
 import { useParams } from 'react-router-dom';
-import InfoCoin from '../components/InfoCoin';
+import InfoCoin from './InfoCoin';
 import useCoinFilter from '../hooks/useCoinFilter';
 
-interface coinsDataMap {
-  name: string;
-  image: {};
-  market_data: {
-    current_price: {
-      usd: string;
-    };
-  };
-}
 
 const CoinFilter = () => {
   const { title } = useParams();
 
-  const coinInfo: coinsDataMap = useCoinFilter({ title: title || 'bitcoin' });
+  const coinInfo= useCoinFilter({ title: title || 'bitcoin' });
   console.log(coinInfo);
   return (
     <>
