@@ -1,8 +1,11 @@
+import { Link } from 'react-router-dom';
+
 interface coinMap {
   name: string;
   symbol: string;
   image: string;
   current_price: number;
+  id: string;
 }
 interface PropsData {
   data: [];
@@ -20,7 +23,7 @@ const CardCoin = (data: any) => {
               .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
             return (
-              <>
+              <Link to={`/coin/${coin.id}`} key={coin.id}>
                 <div className="flex flex-col justify-center items-center py-3 my-3">
                   <img src={coin.image} className="w-20" />
                   <h1>
@@ -29,7 +32,7 @@ const CardCoin = (data: any) => {
                   </h1>
                   <strong>{price}</strong>
                 </div>
-              </>
+              </Link>
             );
           })}
       </div>

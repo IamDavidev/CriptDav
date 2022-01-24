@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
+import CoinFilter from './containers/CoinFilter';
 import Coins from './containers/Coins';
 import Exchanges from './containers/Exchanges';
 import Finance from './containers/Finance';
@@ -10,7 +11,7 @@ function App() {
     <>
       <div className="bg-black flex flex-col justify-center items-center ">
         <div className="py-1 m-3">
-        <h1 className=' text-4xl text-blue-700  ' >CriptDav</h1>
+          <h1 className=" text-4xl text-blue-700  ">CriptDav</h1>
         </div>
         <BrowserRouter>
           <Navbar />
@@ -18,6 +19,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Navigate to="/coins" />} />
               <Route path="/coins" element={<Coins />} />
+              <Route path="/coin/:title" element={<CoinFilter />} />
               <Route path="/exchanges" element={<Exchanges />} />
               <Route path="/nfts" element={<Nfts />} />
             </Routes>

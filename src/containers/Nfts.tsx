@@ -4,10 +4,11 @@ import useNfts from '../hooks/useNfts';
 
 const Nfts = () => {
   const data = useNfts();
+  console.log(data);
   return (
     <div>
       <h1>Nfts</h1>
-      {data && data.length > 0 && <CardNfts data={data} />}
+      {data ? <CardNfts data={data} /> : <p>loading ...</p>}
     </div>
   );
 };
