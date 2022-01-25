@@ -13,7 +13,7 @@ const CardExchanges = (data: any) => {
 
   return (
     <div className="min-h-screen flex flex-col justify-center align-center ">
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-2 md:grid-cols-4">
         {exchanges &&
           exchanges.map((exh: exchangeMap) => {
             return (

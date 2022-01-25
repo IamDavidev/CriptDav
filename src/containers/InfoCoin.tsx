@@ -7,7 +7,7 @@ const InfoCoin = (data: any) => {
   const coinData = infoCoin.market_data;
   return (
     <>
-      <section className="grid grid-cols-2 mt-8">
+      <section className="md:grid md:grid-cols-2 mt-8  flex flex-col  ">
         <div className="flex flex-col justify-center items-center mx-10">
           <img src={infoCoin.image.large} alt={infoCoin.name} />
           <strong className='text-red-700'>{infoCoin.market_cap_rank}</strong>
@@ -67,7 +67,7 @@ const InfoCoin = (data: any) => {
           </div>
         </div>
       </section>
-      <p className='m-20 text-sky-700'>{infoCoin.description.en}</p>
+      <p className='md:m-20 m-5 text-sky-700'>{infoCoin.description.en}</p>
     </>
   );
 };

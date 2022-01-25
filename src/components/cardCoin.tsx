@@ -15,7 +15,7 @@ const CardCoin = (data: any) => {
   const coins = data.data;
   return (
     <>
-      <div className="min-h-screen grid grid-cols-4 place-items-center">
+      <div className="min-h-screen grid md:grid-cols-4 grid-cols-2 place-items-center ">
         {coins &&
           coins.map((coin: coinMap) => {
             const price = coin.current_price
@@ -28,7 +28,7 @@ const CardCoin = (data: any) => {
                   <img src={coin.image} className="w-20" />
                   <h2>
                     {coin.name}:({' '}
-                    <span className="text-blue-800">{coin.symbol}</span>)
+                    <span className="text-blue-800 md:text-red-500">{coin.symbol}</span>)
                   </h2>
                   <strong>{price}</strong>
                 </div>

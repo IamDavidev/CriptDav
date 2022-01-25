@@ -11,7 +11,7 @@ const CardFinance = (data: any) => {
   
   return (
     <div>
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-2 md:grid-cols-4">
         {finance &&
           finance.map((finance: financeMap) => {
             return (
