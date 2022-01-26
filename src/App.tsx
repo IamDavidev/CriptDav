@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
-import CoinFilter from './containers/CoinFilter';
-import Coins from './containers/Coins';
-import Exchanges from './containers/Exchanges';
-import Finance from './containers/Finance';
+import { Suspense, lazy } from 'react';
 import Navbar from './containers/Navbar';
-import Nfts from './containers/Nfts';
+
+const Coins = lazy(() => import('./containers/Coins'));
+const CoinFilter = lazy(() => import('./containers/CoinFilter'));
+const Exchanges = lazy(() => import('./containers/Exchanges'));
+const Nfts = lazy(() => import('./containers/Nfts'));
 
 function App() {
   return (
@@ -13,13 +14,15 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <div className=" min-h-screen p-2 text-zinc-50 flex flex-col justify-center items-center">
-            <Routes>
-              <Route path="/" element={<Navigate to="/coins" />} />
-              <Route path="/coins" element={<Coins />} />
-              <Route path="/coin/:title" element={<CoinFilter />} />
-              <Route path="/exchanges" element={<Exchanges />} />
-              <Route path="/nfts" element={<Nfts />} />
-            </Routes>
+            <Suspense fallback={<div>laoding ...</div>}>
+              <Routes>
+                <Route path="/" element={<Navigate to="/coins" />} />
+                <Route path="/coins" element={<Coins />} />
+                <Route path="/coin/:title" element={<CoinFilter />} />
+                <Route path="/exchanges" element={<Exchanges />} />
+                <Route path="/nfts" element={<Nfts />} />
+              </Routes>
+            </Suspense>
           </div>
         </BrowserRouter>
       </div>

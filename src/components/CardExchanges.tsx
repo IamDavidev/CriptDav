@@ -17,7 +17,7 @@ const CardExchanges = (data: any) => {
         {exchanges &&
           exchanges.map((exh: exchangeMap) => {
             return (
-              <a href={exh.url} target="_blank">
+              <a href={exh.url} target="_blank" key={exh.id}>
                 <div className="py-3 my-4 flex flex-col justify-center items-center">
                   <img src={exh.image} alt={exh.id} />
                   <p>{exh.name}</p>

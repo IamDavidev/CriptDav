@@ -1,26 +1,24 @@
 import CardCoin from '../components/cardCoin';
 import { useCoins } from '../hooks/useCoins';
-import { FC } from 'react';
-const Coins: FC = ({ children }) => {
-  const coinsData = useCoins();
+import { FC, Suspense, lazy } from 'react';
+
+const Coins: FC = () => {
   return (
-    <>
-      <h1>coins</h1>
-      <CardCoin data={coinsData} />
-      <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-  <div className="md:flex">
-    <div className="md:shrink-0">
-      {/* <img className="h-48 w-full object-cover md:h-full md:w-48" src="/img/store.jpg" alt="Man looking at item at a store"> */}
-    </div>
-    <div className="p-8">
-      <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Case study</div>
-      <a href="#" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Finding customers for your new business</a>
-      <p className="mt-2 text-slate-500">Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.</p>
-    </div>
-  </div>
-</div>
-    </>
+    <Suspense
+      fallback={
+        <h1 className="text-center text-2xl font-bold text-gray-700">
+          Loading...
+        </h1>
+      }
+    >
+      <DataCoins />
+    </Suspense>
   );
 };
 
 export default Coins;
+
+const DataCoins = () => {
+  const CoinsData = useCoins();
+  return <CardCoin data={CoinsData} />;
+};
