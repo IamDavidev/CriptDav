@@ -25,10 +25,13 @@ const CardCoin = (data: any) => {
             return (
               <Link to={`/coin/${coin.id}`} key={coin.id}>
                 <div className="flex flex-col justify-center items-center py-3 my-3">
-                  <img src={coin.image} className="w-20" />
+                  <img loading="lazy" src={coin.image} className="w-20" />
                   <h2>
                     {coin.name}:({' '}
-                    <span className="text-blue-800 md:text-red-500">{coin.symbol}</span>)
+                    <span className="text-blue-800 md:text-red-500">
+                      {coin.symbol}
+                    </span>
+                    )
                   </h2>
                   <strong>{price}</strong>
                 </div>

@@ -1,6 +1,6 @@
 import CardCoin from '../components/cardCoin';
 import { useCoins } from '../hooks/useCoins';
-import { FC, Suspense, lazy } from 'react';
+import { FC, Suspense } from 'react';
 
 const Coins: FC = () => {
   return (
@@ -11,6 +11,7 @@ const Coins: FC = () => {
         </h1>
       }
     >
+      <h1>Coins</h1>
       <DataCoins />
     </Suspense>
   );

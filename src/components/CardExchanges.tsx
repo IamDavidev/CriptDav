@@ -19,7 +19,9 @@ const CardExchanges = (data: any) => {
             return (
               <a href={exh.url} target="_blank" key={exh.id}>
                 <div className="py-3 my-4 flex flex-col justify-center items-center">
-                  <img src={exh.image} alt={exh.id} />
+                  <img
+                    loading='lazy'
+                   src={exh.image} alt={exh.id} />
                   <p>{exh.name}</p>
                 </div>
               </a>

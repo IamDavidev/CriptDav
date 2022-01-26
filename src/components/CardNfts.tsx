@@ -21,6 +21,7 @@ const CardNfts = (data: any) => {
                       return (
                         <div key={asset.id}>
                           <img
+                            loading="lazy"
                             src={asset.image_preview_url}
                             className="px-1 m-3 w-40 object-cover"
                             alt={asset.name}

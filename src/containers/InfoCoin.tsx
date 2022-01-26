@@ -9,8 +9,8 @@ const InfoCoin = (data: any) => {
     <>
       <section className="md:grid md:grid-cols-2 mt-8  flex flex-col  ">
         <div className="flex flex-col justify-center items-center mx-10">
-          <img src={infoCoin.image.large} alt={infoCoin.name} />
-          <strong className='text-red-700'>{infoCoin.market_cap_rank}</strong>
+          <img loading="lazy" src={infoCoin.image.large} alt={infoCoin.name} />
+          <strong className="text-red-700">{infoCoin.market_cap_rank}</strong>
         </div>
         <div className="">
           <div className="dataGeneral">
@@ -26,35 +26,33 @@ const InfoCoin = (data: any) => {
             </p>
           </div>
           <div className="changePrice">
-            <h2 className='text-teal-600 text-2xl'>Price change</h2>
+            <h2 className="text-teal-600 text-2xl">Price change</h2>
             <p>
               price :{' '}
-             <span>{infoCoin && infoCoin.market_data.current_price.usd} usd</span>
-            
+              <span>
+                {infoCoin && infoCoin.market_data.current_price.usd} usd
+              </span>
             </p>
             <p className="flex flex-row">
               price change 24h :
-              <Price data={coinData.price_change_percentage_24h} />
-              %
+              <Price data={coinData.price_change_percentage_24h} />%
             </p>
             <p className="flex flex-row">
               price change 7d :{' '}
-              <Price data={coinData.price_change_percentage_7d} />
-              %
+              <Price data={coinData.price_change_percentage_7d} />%
             </p>
             <p className="flex flex-row">
               Price change 14d :{' '}
-              <Price data={coinData.price_change_percentage_14d} />
-              %
+              <Price data={coinData.price_change_percentage_14d} />%
             </p>
           </div>
           <div className="comunity">
-            <h2 className='text-teal-600 text-2xl' >Comunity data</h2>
+            <h2 className="text-teal-600 text-2xl">Comunity data</h2>
             <p>
               twiter :{' '}
               <span className="text-blue-700">
                 {infoCoin.community_data.twitter_followers}
-                 {'  '} followers
+                {'  '} followers
               </span>
             </p>
             <p>
@@ -67,7 +65,7 @@ const InfoCoin = (data: any) => {
           </div>
         </div>
       </section>
-      <p className='md:m-20 m-5 text-sky-700'>{infoCoin.description.en}</p>
+      <p className="md:m-20 m-5 text-sky-700">{infoCoin.description.en}</p>
     </>
   );
 };
